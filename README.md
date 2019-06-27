@@ -37,32 +37,22 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+## `设计思想`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+react是组件式开发思想,所以组件拆分就显得至关重要,在components中的组件要继承父页面的数据,这里使用了类属性 defaultProps 来配置默认参数,为了实现组件的可复用性,同时降低代码维护的难度,要尽量少写有状态的组件
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## `start和props总结`
 
-### Code Splitting
+state 的主要作用是用于组件保存,控制,修改自己的可变状态, state 在组件内部初始化，可以被组件自身修改，而外部不能访问也不能修改。可以认为 state 是一个局部的、只能被组件自身控制的数据源. state 中状态可以通过 this.setState 方法进行更新,setState 会导致组件的重新渲染,
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+props 的主要作用是让使用该组件的父组件可以传入参数来配置该组件.它是外部传进来的配置参数,组件内部无法控制也无法修改.除非外部组件主动传入新的 props,否则组件的 props 永远保持不变.
 
-### Analyzing the Bundle Size
+state 和 props 都可以决定组件的行为和显示形态. 一个组件的state中的数据可以通过props传给子组件,一个组件也可以使用外部传入的 props 来初始化自己的 state.但是它们的职责其实非常明晰分明：state 是让组件控制自己的状态,props 是让外部对组件自己进行配置.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+## `通过给组件添加类属性 defaultProps 来配置默认参`
 
-### Making a Progressive Web App
+在子组件Search中设置Search.defaultProps={breadcrumb: []},此时可以通过父页面中的<Search breadcrumb={this.state.breadcrumb} />进行父传子,上面已经提到了,父组件的传参时,会传入子组件的props中,并且在子组件中不可修改.通过this.props渲染页面.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+## `无状态组件`
 
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+没有 state 的组件叫无状态组件（stateless component），设置了 state 的叫做有状态组件（stateful component）。因为状态会带来管理的复杂性，我们尽量多地写无状态组件，尽量少地写有状态的组件。这样会降低代码维护的难度，也会在一定程度上增强组件的可复用性。

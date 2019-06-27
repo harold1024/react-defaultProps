@@ -1,0 +1,170 @@
+/*公共样式*/
+// *,
+// ::before,
+// ::after {
+//     margin: 0;
+//     padding: 0;
+//     word-wrap:break-word;
+//     box-sizing: border-box;
+// }
+
+:focus {
+    outline: none;
+}
+
+::-moz-focus-inner {
+    border-color: transparent;
+}
+
+body,
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-size: 16px;
+    /* font-family: Helvetica Neue,Helvetica,PingFang SC,Tahoma,Arial,sans-serif; */
+    color: #333;
+    background-color: #ebebeb;
+    -webkit-overflow-scrolling: touch
+}
+
+a {
+    text-decoration: none;
+    color: #3e3e3e;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+input {
+    border: none;
+    outline: none;
+}
+
+input,textarea{
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+img {
+    display: block;
+    border-style: none;
+}
+
+ul,
+li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.w {
+    width: 1140px;
+    margin: 0 auto;
+}
+
+.l {
+    float: left;
+}
+
+.r {
+    float: right;
+}
+
+.o{
+    overflow: hidden;
+}
+.h{
+    display: none;
+}
+
+
+
+/* 搜索下拉框 */
+
+/*下拉框样式*/
+.wl-select-main {
+    position: relative;
+    width: 140px;
+    height: 56px;
+    background: rgba(243, 152, 0, 1);
+    text-align: center;
+    line-height: 55px;
+    cursor: pointer;
+    font-weight: 400;
+    color: #fff;
+}
+
+.select-head-cont {
+    font-size: 16px;
+    color: #fff;
+}
+
+.select-head .select-icon {
+    font-size: 18px;
+    color: #fff;
+}
+
+.option {
+    position: absolute;
+    top: 56px;
+    z-index: 101;
+    font-size: 14px;
+    color: #333;
+    background: rgba(255, 255, 255, 1);
+    line-height: 40px;
+    border: 1px solid rgba(235, 235, 235, 1);
+    // display: none;
+}
+
+.option-item{
+    width: 143px;
+    list-style: none;
+    text-align: left;
+    text-align: center;
+}
+
+.option-item:hover {
+    color: #F39800;
+}
+
+/* input样式 */
+.wl-input {
+    overflow: hidden;
+    width: 545px;
+    height: 50px;
+    background: #fff;
+    border: 3px solid rgba(243, 152, 0, 1);
+    padding-left: 20px;
+    color: #999;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.wl-input-main {
+    width: 480px;
+    height: 50px;
+    color: #999;
+    font-size: 22px;
+    border: none;
+    outline: none;
+}
+
+.wl-input-main::-webkit-input-placeholder {
+    color: #999;
+    font-size: 22px;
+}
+
+.wl-input .iconfangdajing {
+    font-size: 22px;
+    color: #F39800;
+    cursor: pointer;
+}
+
+.wl-select {
+    display: flex;
+}
+
